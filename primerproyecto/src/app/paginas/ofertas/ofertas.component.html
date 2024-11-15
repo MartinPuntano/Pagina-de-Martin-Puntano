@@ -1,0 +1,15 @@
+<h1 align="center">Ofertas</h1>
+<h2 align="center">Si pagas en efectivo, te llevas estas prendas al 80% de su valor</h2>
+<div id="color1" class="card-container">
+  <ng-container *ngIf="Productos && Productos.length">
+    <ng-container *ngFor="let producto of Productos">
+      <div id="color2" *ngIf="producto.disponibilidad" class="card">
+        <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="product-image">
+        <h2>{{ producto.nombre }}</h2>
+        <p>{{ producto.descripcion }}</p>
+        <p>Precio: {{ producto.precio | currency }}</p>
+        <button type="button" class="btn btn-outline-primary" (click)="agregar(producto)">Agregar al carrito</button>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>
